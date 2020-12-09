@@ -29,11 +29,11 @@ class FileWatcher {
             public void onFileChange(File file) {
                 super.onFileChange(file);
                 if ("counters.json".equals(file.getName())) {
-                    System.out.println("actions.json has changed, loading...");
-                    ConfigParser.getInstance().loadConfig(Const.ACTION_WATCHER);
-                } else if ("actions.json".equals(file.getName())) {
                     System.out.println("counters.json has changed, loading...");
                     ConfigParser.getInstance().loadConfig(Const.COUNTER_WATCHER);
+                } else if ("actions.json".equals(file.getName())) {
+                    System.out.println("actions.json has changed, loading...");
+                    ConfigParser.getInstance().loadConfig(Const.ACTION_WATCHER);
                 }
 
 
