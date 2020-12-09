@@ -35,17 +35,13 @@ public class Num extends BaseCounter {
 
     @Override
     public long retrieve() {
-        try {
-            Jedis jedis = JedisInstance.getInstance().getResource();
-            String originResult = jedis.get(key);
-            if (originResult == null) {
-                throw new RuntimeException("Retrieve error, key not exist");
-            }
-            long result = Long.parseLong(originResult);
-            jedis.close();
-            return result;
-        } catch (Exception e) {
-            throw e;
+        Jedis jedis = JedisInstance.getInstance().getResource();
+        String originResult = jedis.get(key);
+        if (originResult == null) {
+            throw new RuntimeException("Retrieve error, key not exist");
         }
+        long result = Long.parseLong(originResult);
+        jedis.close();
+        return result;
     }
 }

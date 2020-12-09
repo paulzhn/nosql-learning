@@ -80,6 +80,9 @@ public class Freq extends BaseCounter {
                     case "set":
                         count += jedis.scard(key);
                         break;
+                    case "list":
+                        count += jedis.llen(key);
+                        break;
                     case "none":
                         continue;
                     default:

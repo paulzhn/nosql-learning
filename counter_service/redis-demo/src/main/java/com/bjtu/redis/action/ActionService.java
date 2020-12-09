@@ -3,10 +3,7 @@ package com.bjtu.redis.action;
 import com.bjtu.redis.config.entity.Action;
 import com.bjtu.redis.config.entity.Config;
 import com.bjtu.redis.config.entity.Counter;
-import com.bjtu.redis.counter.BaseCounter;
-import com.bjtu.redis.counter.Freq;
-import com.bjtu.redis.counter.Num;
-import com.bjtu.redis.counter.Set;
+import com.bjtu.redis.counter.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +32,8 @@ public class ActionService {
                 return new Num(counter, values);
             case "set":
                 return new Set(counter, values);
+            case "list":
+                return new RedisList(counter, values);
             default:
                 return null;
         }

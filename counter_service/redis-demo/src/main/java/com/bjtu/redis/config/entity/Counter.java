@@ -55,7 +55,7 @@ public class Counter {
         List<String> valueFields = JSONArray.parseArray(map.getOrDefault("valueFields", "[]").toString(), String.class);
         String redisCluster = map.getOrDefault("redisCluster", "default").toString();
         List<String> keyFields = JSONArray.parseArray(map.get("keyFields").toString(), String.class);
-        int counterIndex = (Integer) map.get("counterIndex");
+        int counterIndex = Integer.parseInt(map.get("counterIndex").toString());
         int expireTime = (Integer) map.getOrDefault("expireTime", 0);
 
         return new Counter(counterName, type, key, saveKey, keyFields, valueFields, periodField, counterIndex, redisCluster, maxValue, expireTime);
