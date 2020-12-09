@@ -1,0 +1,34 @@
+{
+  "actions": [
+    {
+      "name": "ADD_ANSWER_TO_QUESTION",
+      "desc": "给问题添加答主",
+      "retrieve": {
+        "addQuestionAnswer": "addQuestionAnswer"
+      },
+      "save": [
+        "addQuestionAnswer"
+      ]
+    },
+    {
+      "name": "CNT_QUESTION_ANSWER_REL_PERIOD",
+      "desc": "统计一段时间内问题对应答主的数量",
+      "retrieve": {
+        "cntQuestionAnswerRelPeriod": "cntQuestionAnswerRelPeriod"
+      },
+      "save": [
+        "cntQuestionAnswerRelPeriod"
+      ]
+    },
+    {
+      "name": "INCR_CNT_QUESTION_ANSWER_REL_PERIOD",
+      "desc": "增加一段时间内问题对应答主的数量",
+      "retrieve": {
+        "setQuestionAnswerRelCnt": "setQuestionAnswerRelCnt"
+      },
+      "save": [
+        "setQuestionAnswerRelCnt"
+      ]
+    }
+  ]
+}

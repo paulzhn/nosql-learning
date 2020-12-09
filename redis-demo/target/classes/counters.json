@@ -1,0 +1,53 @@
+{
+  "counters": [
+    {
+      "counterName": "addQuestionAnswer",
+      "counterIndex": 1,
+      "type": "set",
+      "key": "questionAnswerRel",
+      "keyFields": [
+        "qid",
+        "datetime"
+      ],
+      "valueFields": [
+        "uid"
+      ],
+      "maxValue": 100,
+      "expireTime": 86400,
+      "redisCluster": "default"
+    },
+    {
+      "counterName": "setQuestionAnswerRelCnt",
+      "counterIndex": 2,
+      "type": "num",
+      "key": "questionAnswerRelCnt",
+      "keyFields": [
+        "qid",
+        "datetime"
+      ],
+      "valueFields": [
+        "incrNum"
+      ],
+      "expireTime": 0,
+      "redisCluster": "default"
+    },
+    {
+      "counterName": "cntQuestionAnswerRelPeriod",
+      "counterIndex": 3,
+      "type": "freq",
+      "key": "questionAnswerRel",
+      "saveKey": "questionAnswerRelCnt",
+      "keyFields": [
+        "qid",
+        "datetime"
+      ],
+      "periodField": "datetime",
+      "valueFields": [
+        "fromPeriod",
+        "toPeriod"
+      ],
+      "expireTime": 0,
+      "redisCluster": "default"
+    }
+  ]
+}
